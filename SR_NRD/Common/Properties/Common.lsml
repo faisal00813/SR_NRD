@@ -1174,115 +1174,19 @@
         EntitySet="People"
         Name="Person" />
     </AssociationSet>
-    <EntitySet
-      CanDelete="True"
-      CanInsert="True"
-      CanUpdate="True"
-      EntityType="NomineeRelatives"
-      Name="NomineeRelativesSet" />
-    <QueryOperation
-      Name="NomineeRelativesSet_Single"
-      ReturnType="NomineeRelatives">
-      <QueryOperation.Attributes>
-        <Generated />
-        <Description
-          Value="Returns the entity whose identity is specified by the parameter(s)." />
-      </QueryOperation.Attributes>
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="Id" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="Id" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="NomineeRelativesSet" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="Id"
-        ParameterType=":Int32?">
-        <QueryOperationParameter.Attributes>
-          <Description
-            Value="The value of the 'Id' key property of the entity to retrieve." />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-    <QueryOperation
-      Name="NomineeRelativesSet_SingleOrDefault"
-      ReturnType="NomineeRelatives">
-      <QueryOperation.Attributes>
-        <Generated />
-        <Description
-          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
-      </QueryOperation.Attributes>
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="Id" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="Id" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="NomineeRelativesSet" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="Id"
-        ParameterType=":Int32?">
-        <QueryOperationParameter.Attributes>
-          <Description
-            Value="The value of the 'Id' key property of the entity to retrieve." />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-    <AssociationSet
-      Association="NomineeRelatives_Nominee"
-      Name="NomineeRelatives_Nominees">
-      <AssociationSetEnd
-        EntitySet="NomineeRelativesSet"
-        Name="NomineeRelatives" />
-      <AssociationSetEnd
-        EntitySet="Nominees"
-        Name="Nominee" />
-    </AssociationSet>
-    <AssociationSet
-      Association="NomineeRelatives_Family"
-      Name="NomineeRelatives_Families">
-      <AssociationSetEnd
-        EntitySet="NomineeRelativesSet"
-        Name="NomineeRelatives" />
-      <AssociationSetEnd
-        EntitySet="Families"
-        Name="Family" />
-    </AssociationSet>
   </EntityContainer>
   <EntityType
     Name="Person">
+    <EntityType.Attributes>
+      <DefaultScreen
+        Value="LightSwitchApplication:PersonDetail">
+        <DefaultScreen.Attributes>
+          <ScreenParameterMapping
+            KeyProperty="Person/Properties[Id]"
+            ScreenParameter="LightSwitchApplication:PersonDetail/Properties[PersonId]" />
+        </DefaultScreen.Attributes>
+      </DefaultScreen>
+    </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -1804,6 +1708,12 @@
           <DecimalConstraint
             Precision="18"
             Scale="2" />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="IsoCurrencySymbol"
+              Value="INR" />
+          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -1883,6 +1793,9 @@
           <MaxLength
             Value="255" />
           <SupportedValue
+            DisplayName="Appointment"
+            Value="Appointment" />
+          <SupportedValue
             DisplayName="Promotion"
             Value="Promotion" />
           <SupportedValue
@@ -1953,6 +1866,12 @@
           <DecimalConstraint
             Precision="18"
             Scale="2" />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="IsoCurrencySymbol"
+              Value="INR" />
+          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -2025,6 +1944,13 @@
       </EntityProperty>
       <EntityProperty
         Name="RegularisationDate"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RelivingDate"
         PropertyType=":Date?">
         <EntityProperty.Attributes>
           <NotSearchable />
@@ -2218,6 +2144,12 @@
           <DecimalConstraint
             Precision="18"
             Scale="2" />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="IsoCurrencySymbol"
+              Value="INR" />
+          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
@@ -2386,6 +2318,12 @@
           <DecimalConstraint
             Precision="18"
             Scale="2" />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="IsoCurrencySymbol"
+              Value="INR" />
+          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -2498,11 +2436,24 @@
         FromEnd="Family"
         Name="Person"
         ToEnd="Person" />
-      <NavigationProperty
-        Association="NomineeRelatives_Family"
-        FromEnd="Family"
-        Name="NomineeRelativesCollection"
-        ToEnd="NomineeRelatives" />
+      <EntityProperty
+        Name="Share"
+        PropertyType="Microsoft.LightSwitch.Extensions:Percent?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DecimalConstraint
+            Precision="18"
+            Scale="9" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="DCRG"
+        PropertyType=":Boolean">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -2715,11 +2666,6 @@
         FromEnd="Nominee"
         Name="Person"
         ToEnd="Person" />
-      <NavigationProperty
-        Association="NomineeRelatives_Nominee"
-        FromEnd="Nominee"
-        Name="NomineeRelativesCollection"
-        ToEnd="NomineeRelatives" />
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -2738,105 +2684,13 @@
       </AssociationEnd.Attributes>
     </AssociationEnd>
   </Association>
-  <EntityType
-    Name="NomineeRelatives">
-    <EntityType.Methods>
-      <EntityMethod
-        Name="Delete">
-        <EntityMethod.Attributes>
-          <Generated />
-        </EntityMethod.Attributes>
-      </EntityMethod>
-    </EntityType.Methods>
-    <EntityType.Properties>
-      <KeyProperty
-        Name="Id"
-        PropertyType=":Int32">
-        <KeyProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </KeyProperty.Attributes>
-      </KeyProperty>
-      <EntityProperty
-        Name="RowVersion"
-        PropertyType=":RowVersion">
-        <EntityProperty.Attributes>
-          <UseForConcurrency />
-          <Generated />
-          <Hidden />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Type"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <MaxLength
-            Value="255" />
-          <Required />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Percent"
-        PropertyType="Microsoft.LightSwitch.Extensions:Percent">
-        <EntityProperty.Attributes>
-          <Required />
-          <NotSearchable />
-          <DecimalConstraint
-            Precision="18"
-            Scale="9" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Contingency"
-        PropertyType=":String?">
-        <EntityProperty.Attributes>
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <NavigationProperty
-        Association="NomineeRelatives_Nominee"
-        FromEnd="NomineeRelatives"
-        Name="Nominee"
-        ToEnd="Nominee" />
-      <NavigationProperty
-        Association="NomineeRelatives_Family"
-        FromEnd="NomineeRelatives"
-        Name="Family"
-        ToEnd="Family" />
-    </EntityType.Properties>
-  </EntityType>
-  <Association
-    Name="NomineeRelatives_Nominee">
-    <AssociationEnd
-      EntityType="NomineeRelatives"
-      Multiplicity="Many"
-      Name="NomineeRelatives" />
-    <AssociationEnd
-      EntityType="Nominee"
-      Multiplicity="One"
-      Name="Nominee">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Cascade" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-  </Association>
-  <Association
-    Name="NomineeRelatives_Family">
-    <AssociationEnd
-      EntityType="NomineeRelatives"
-      Multiplicity="Many"
-      Name="NomineeRelatives" />
-    <AssociationEnd
-      EntityType="Family"
-      Multiplicity="One"
-      Name="Family">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Restrict" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-  </Association>
+  <Permission
+    Name="EntryOperator">
+    <Permission.Attributes>
+      <DisplayName
+        Value="EntryOperator" />
+      <Description
+        Value="Can create and edit SR" />
+    </Permission.Attributes>
+  </Permission>
 </ModelFragment>
