@@ -175,15 +175,6 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Label MedicalCatagory_lb;
         
         /// <summary>
-        /// MedicalRemark_lb control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MedicalRemark_lb;
-        
-        /// <summary>
         /// MedicalReferance_lb control.
         /// </summary>
         /// <remarks>
@@ -191,15 +182,6 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label MedicalReferance_lb;
-        
-        /// <summary>
-        /// MedicalCertificateNo_lb control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MedicalCertificateNo_lb;
         
         /// <summary>
         /// MedicalCertificateDate_lb control.
@@ -211,6 +193,24 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Label MedicalCertificateDate_lb;
         
         /// <summary>
+        /// MedicalRemark_lb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MedicalRemark_lb;
+        
+        /// <summary>
+        /// MedicalCertificateNo_lb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MedicalCertificateNo_lb;
+        
+        /// <summary>
         /// MedicalReferanceDate_lb control.
         /// </summary>
         /// <remarks>
@@ -218,15 +218,6 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label MedicalReferanceDate_lb;
-        
-        /// <summary>
-        /// MedicalPerson_lb control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MedicalPerson_lb;
         
         /// <summary>
         /// BankName_lb control.
@@ -238,15 +229,6 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Label BankName_lb;
         
         /// <summary>
-        /// BankAddress_lb control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label BankAddress_lb;
-        
-        /// <summary>
         /// BankAccNo_lb control.
         /// </summary>
         /// <remarks>
@@ -256,15 +238,6 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Label BankAccNo_lb;
         
         /// <summary>
-        /// IFCSCode_lb control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label IFCSCode_lb;
-        
-        /// <summary>
         /// MICRCode control.
         /// </summary>
         /// <remarks>
@@ -272,6 +245,24 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label MICRCode;
+        
+        /// <summary>
+        /// BankAddress_lb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label BankAddress_lb;
+        
+        /// <summary>
+        /// IFCSCode_lb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label IFCSCode_lb;
         
         /// <summary>
         /// PANNo_lb control.
@@ -292,15 +283,6 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Label Department_lb;
         
         /// <summary>
-        /// Scale_lb control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Scale_lb;
-        
-        /// <summary>
         /// Group_lb control.
         /// </summary>
         /// <remarks>
@@ -308,15 +290,6 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Group_lb;
-        
-        /// <summary>
-        /// BillUnit_lb control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label BillUnit_lb;
         
         /// <summary>
         /// Designation_lb control.
@@ -328,15 +301,6 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Label Designation_lb;
         
         /// <summary>
-        /// RateOfPay_lb control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label RateOfPay_lb;
-        
-        /// <summary>
         /// Station_lb control.
         /// </summary>
         /// <remarks>
@@ -344,6 +308,33 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Station_lb;
+        
+        /// <summary>
+        /// Scale_lb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Scale_lb;
+        
+        /// <summary>
+        /// BillUnit_lb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label BillUnit_lb;
+        
+        /// <summary>
+        /// RateOfPay_lb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label RateOfPay_lb;
         
         /// <summary>
         /// LetterNo_lb control.
