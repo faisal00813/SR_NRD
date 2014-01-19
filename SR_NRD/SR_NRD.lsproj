@@ -18,9 +18,9 @@
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>false</SignManifests>
     <BaseIntermediateOutputPath>bin</BaseIntermediateOutputPath>
-    <ApplicationClientType>Browser</ApplicationClientType>
-    <ApplicationServerType>IIS</ApplicationServerType>
-    <AuthenticationType>Forms</AuthenticationType>
+    <ApplicationClientType>Desktop</ApplicationClientType>
+    <ApplicationServerType>LocalHost</ApplicationServerType>
+    <AuthenticationType>None</AuthenticationType>
     <ApplicationName>SR_NRD</ApplicationName>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <ServiceDefinitionFile>ServiceDefinition.csdef</ServiceDefinitionFile>
