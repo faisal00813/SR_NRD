@@ -15,7 +15,7 @@
     <h2>
         <strong>Personal Details</strong><br /></h2>
         <br /><div class="leftColumn">
-            <div class="textLabel">rsonnel  Full Name:
+            <div class="textLabel">Full Name:
                 <asp:Label ID="PersonName" runat="server" Text="Label" CssClass="textValue">
 
                 </asp:Label></div>
@@ -106,7 +106,8 @@
        <div class="textLabel"> Identification Mark:
     <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></div>
         <br />
-         </div>    
+         </div>   
+        </div> 
 
      
         
@@ -123,7 +124,11 @@
         <br />
         <br />
         <br />
-             <strong>Medical Details</strong><br />
+             <div><strong>
+                 <br />
+                 <br />
+                 <br />
+                 Medical Details</strong><br /></div>
         <br />
         Medical Catagory: <asp:Label ID="MedicalCatagory_lb" runat="server" Text="Label"></asp:Label>
                                                                                                                                                                                                              Medical Remark:
