@@ -130,63 +130,106 @@
                  <br />
                  Medical Details</strong><br /></div>
         <br />
-        Medical Catagory: <asp:Label ID="MedicalCatagory_lb" runat="server" Text="Label"></asp:Label>
-                                                                                                                                                                                                             Medical Remark:
-        <asp:Label ID="MedicalRemark_lb" runat="server" Text="Label"></asp:Label>
+       <div class="leftColumn">
+           <div class="textLabel"> Medical Catagory: <asp:Label ID="MedicalCatagory_lb" runat="server" Text="Label"></asp:Label></div>
+               <br />
+               <br />
+      <div class="textLabel">  Medical Referance:
+        <asp:Label ID="MedicalReferance_lb" runat="server" Text="Label"></asp:Label></div>
+                                                                                                                                                                                         <br />
+               <br />
+       <div class="textLabel"> Medical Certificate Date:
+        <asp:Label ID="MedicalCertificateDate_lb" runat="server" Text="Label"></asp:Label></div>
+                                                                                                                                                                         </div>
+         
+                      
+       <div class="rightColumn">
+           <div class="textLabel">Medical Remark: <asp:Label ID="MedicalRemark_lb" runat="server" Text="Label"></asp:Label></div>
+               <br />
+               <br />
+        <div class="textLabel"> Medical Certificate No:
+        <asp:Label ID="MedicalCertificateNo_lb" runat="server" Text="Label"></asp:Label></div>
+               <br />
+               <br />
+       <div class="textLabel">  Medical Referacne Date:  
+        <asp:Label ID="MedicalReferanceDate_lb" runat="server" Text="Label"></asp:Label></div>
+           </div>
+       
         <br />
         <br />
-        Medical Referance:
-        <asp:Label ID="MedicalReferance_lb" runat="server" Text="Label"></asp:Label>
-                                                                                                                                                                                         Medical Certificate No:
-        <asp:Label ID="MedicalCertificateNo_lb" runat="server" Text="Label"></asp:Label>
+       <div> <strong>  
+           <br />
+           <br />
+           Bank Details</strong><br /></div>
         <br />
-        <br />
-        Medical Certificate Date:
-        <asp:Label ID="MedicalCertificateDate_lb" runat="server" Text="Label"></asp:Label>
-                                                                                                                                                                         Medical Referacne Date:  
-        <asp:Label ID="MedicalReferanceDate_lb" runat="server" Text="Label"></asp:Label>
-        <br />
-        <br />
-        Medical Person: <asp:Label ID="MedicalPerson_lb" runat="server" Text="Label"></asp:Label>
-        <br />
-        <br />
-        <br />
-                                                                                                                                       <strong>  Bank Details</strong><br />
-        <br />
-        Bank Name: <asp:Label ID="BankName_lb" runat="server" Text="Label"></asp:Label>
-                                                                                                                                                                                                                                       Bank Address:<asp:Label ID="BankAddress_lb" runat="server" Text="Label"></asp:Label>
-        <br />
-        <br />
-        Bank A/C No:
-        <asp:Label ID="BankAccNo_lb" runat="server" Text="Label"></asp:Label>
-                                                                                                                                                                                                                                 IFCS Code:<asp:Label ID="IFCSCode_lb" runat="server" Text="Label"></asp:Label>
-        <br />
-        <br />
-        MICR Code:
-        <asp:Label ID="MICRCode" runat="server" Text="Label"></asp:Label>
-                                                                                                                                                                                                                                       PAN No:
-        <asp:Label ID="PANNo_lb" runat="server" Text="Label"></asp:Label>
-  <br />
-        <br />
-                                                                                                                                           <strong>Present Details</strong><br />
-        <br />
-        Department: <asp:Label ID="Department_lb" runat="server" Text="Label"></asp:Label>
-                                                                                                                                                                                                                                                                     Scale:<asp:Label ID="Scale_lb" runat="server" Text="Label"></asp:Label>
-        <br />
-        <br />
-        Group:
-        <asp:Label ID="Group_lb" runat="server" Text="Label"></asp:Label>
-                                                                                                                                                                                                                                                                             Bill Unit:<asp:Label ID="BillUnit_lb" runat="server" Text="Label"></asp:Label>
-        <br />
-        <br />
-       <div style="float:left"> Designation:
-        <asp:Label ID="Designation_lb" runat="server" Text="Label"></asp:Label></div>
-                                                                                                                                                                                                                                                          <div  > RatOfPay:<asp:Label ID="RateOfPay_lb" runat="server" Text="Label"></asp:Label></div>
-  <br />
-        <br />
-        Station:
-        <asp:Label ID="Station_lb" runat="server" Text="Label"></asp:Label>
+        <div class="leftColumn">
+            <div class="textLabel"> Bank Name: <asp:Label ID="BankName_lb" runat="server" Text="Label"></asp:Label></div> 
+                <br />
+       <div class="textLabel"> Bank A/C No:
+        <asp:Label ID="BankAccNo_lb" runat="server" Text="Label"></asp:Label></div>
+                <br />
+           
+       <div class="textLabel"> MICR Code:
+        <asp:Label ID="MICRCode" runat="server" Text="Label"></asp:Label></div>
+                <br />
         
+            
+        </div>
+        <div class="rightColumn">
+            <div class="textLabel">Bank Address:<asp:Label ID="BankAddress_lb" runat="server" Text="Label"></asp:Label></div>
+
+            
+
+           
+            <br />
+    <div class="textLabel">  IFCS Code:<asp:Label ID="IFCSCode_lb" runat="server" Text="Label"></asp:Label></div>
+            <br />
+            <br />
+        <div class="textLabel">          PAN No:
+        <asp:Label ID="PANNo_lb" runat="server" Text="Label"></asp:Label></div>
+            </div>
+
+            
+
+           
+        <br />
+        <br />
+                              <div>  <strong>
+                                  <br />
+                                  <br />
+                                  Present Details</strong><br /></div>
+        <br />
+       <div class="leftColumn"> 
+          <div class="textLabel"> Department: <asp:Label ID="Department_lb" runat="server" Text="Label"></asp:Label></div>
+       <br />
+       <div class="textLabel"> Group:
+        <asp:Label ID="Group_lb" runat="server" Text="Label"></asp:Label></div>
+                                                                                                                                                                                                                                                                             <br />
+           <br />
+       <div class="textLabel"> Designation:
+        <asp:Label ID="Designation_lb" runat="server" Text="Label"></asp:Label></div>
+           <br />
+           <br />
+       <div class="textLabel"> Station:
+        <asp:Label ID="Station_lb" runat="server" Text="Label"></asp:Label></div>
+        
+       <br />
+             
+       </div>
+          <div class="rightColumn"> 
+              <div class="textLabel"> Scale:<asp:Label ID="Scale_lb" runat="server" Text="Label"></asp:Label></div>
+                  <br />
+                 <div class="textLabel"> Bill Unit:<asp:Label ID="BillUnit_lb" runat="server" Text="Label"></asp:Label></div>
+                  <br />
+              
+        <br />
+          <div class="textLabel">    RatOfPay:<asp:Label ID="RateOfPay_lb" runat="server" Text="Label"></asp:Label></div>
+        </div>
+        <br />
+        
+        <br />
+        <br />
+        <br />
         <br />
         <br />
                                                                                                                                                                         <strong>Training<br />

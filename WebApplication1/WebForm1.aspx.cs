@@ -41,7 +41,7 @@ namespace WebApplication1
                 MedicalCertificateNo_lb.Text = person.Medicals.FirstOrDefault().MedicalCertificateNo;
                 MedicalCertificateDate_lb.Text = person.Medicals.FirstOrDefault().MedicalCertificateDate.ToString(); ;
                 MedicalReferanceDate_lb.Text = person.Medicals.FirstOrDefault().MedicalReferanceDate.ToString(); ;
-                MedicalPerson_lb.Text = person.Medicals.FirstOrDefault().Medical_Person.ToString(); ;
+                //MedicalPerson_lb.Text = person.Medicals.FirstOrDefault().Medical_Person.ToString(); ;
 
                 BankName_lb.Text = person.BankDetails.FirstOrDefault().BankName;
                 BankAddress_lb.Text = person.BankDetails.FirstOrDefault().BankAddress;
