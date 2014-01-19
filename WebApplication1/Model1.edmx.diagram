@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fe3a6d83c3db44b98ef64ab62d98c1fd" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="DBModel.Advance" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Award" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.BankDetail" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Family" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Increment" Width="1.5" PointX="3" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Medical" Width="1.5" PointX="3" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.NomineeRelativesSet" Width="1.5" PointX="5.25" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Nominee" Width="1.5" PointX="3" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Penalty" Width="1.5" PointX="3" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Person" Width="1.5" PointX="0.75" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.PresentDetail" Width="1.5" PointX="3" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.PRTF" Width="1.5" PointX="3" PointY="35" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Training" Width="1.5" PointX="3" PointY="41" IsExpanded="true" />
+        <AssociationConnector Association="DBModel.Advance_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.Award_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.BankDetail_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.Family_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.NomineeRelatives_Family" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.Increment_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.Medical_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.NomineeRelatives_Nominee" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.Nominee_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.Penalty_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.PresentDetail_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.PRTF_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.Training_Person" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

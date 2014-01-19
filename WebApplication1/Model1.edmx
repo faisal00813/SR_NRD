@@ -1,0 +1,1159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="DBModelStoreContainer">
+          <EntitySet Name="Advances" EntityType="DBModel.Store.Advances" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Awards" EntityType="DBModel.Store.Awards" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BankDetails" EntityType="DBModel.Store.BankDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Families" EntityType="DBModel.Store.Families" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Increments" EntityType="DBModel.Store.Increments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Medicals" EntityType="DBModel.Store.Medicals" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NomineeRelativesSet" EntityType="DBModel.Store.NomineeRelativesSet" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Nominees" EntityType="DBModel.Store.Nominees" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Penalties" EntityType="DBModel.Store.Penalties" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="People" EntityType="DBModel.Store.People" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PresentDetails" EntityType="DBModel.Store.PresentDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PRTFs" EntityType="DBModel.Store.PRTFs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Trainings" EntityType="DBModel.Store.Trainings" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="Advance_Person" Association="DBModel.Store.Advance_Person">
+            <End Role="People" EntitySet="People" />
+            <End Role="Advances" EntitySet="Advances" />
+          </AssociationSet>
+          <AssociationSet Name="Award_Person" Association="DBModel.Store.Award_Person">
+            <End Role="People" EntitySet="People" />
+            <End Role="Awards" EntitySet="Awards" />
+          </AssociationSet>
+          <AssociationSet Name="BankDetail_Person" Association="DBModel.Store.BankDetail_Person">
+            <End Role="People" EntitySet="People" />
+            <End Role="BankDetails" EntitySet="BankDetails" />
+          </AssociationSet>
+          <AssociationSet Name="Family_Person" Association="DBModel.Store.Family_Person">
+            <End Role="People" EntitySet="People" />
+            <End Role="Families" EntitySet="Families" />
+          </AssociationSet>
+          <AssociationSet Name="Increment_Person" Association="DBModel.Store.Increment_Person">
+            <End Role="People" EntitySet="People" />
+            <End Role="Increments" EntitySet="Increments" />
+          </AssociationSet>
+          <AssociationSet Name="Medical_Person" Association="DBModel.Store.Medical_Person">
+            <End Role="People" EntitySet="People" />
+            <End Role="Medicals" EntitySet="Medicals" />
+          </AssociationSet>
+          <AssociationSet Name="Nominee_Person" Association="DBModel.Store.Nominee_Person">
+            <End Role="People" EntitySet="People" />
+            <End Role="Nominees" EntitySet="Nominees" />
+          </AssociationSet>
+          <AssociationSet Name="NomineeRelatives_Family" Association="DBModel.Store.NomineeRelatives_Family">
+            <End Role="Families" EntitySet="Families" />
+            <End Role="NomineeRelativesSet" EntitySet="NomineeRelativesSet" />
+          </AssociationSet>
+          <AssociationSet Name="NomineeRelatives_Nominee" Association="DBModel.Store.NomineeRelatives_Nominee">
+            <End Role="Nominees" EntitySet="Nominees" />
+            <End Role="NomineeRelativesSet" EntitySet="NomineeRelativesSet" />
+          </AssociationSet>
+          <AssociationSet Name="Penalty_Person" Association="DBModel.Store.Penalty_Person">
+            <End Role="People" EntitySet="People" />
+            <End Role="Penalties" EntitySet="Penalties" />
+          </AssociationSet>
+          <AssociationSet Name="PresentDetail_Person" Association="DBModel.Store.PresentDetail_Person">
+            <End Role="People" EntitySet="People" />
+            <End Role="PresentDetails" EntitySet="PresentDetails" />
+          </AssociationSet>
+          <AssociationSet Name="PRTF_Person" Association="DBModel.Store.PRTF_Person">
+            <End Role="People" EntitySet="People" />
+            <End Role="PRTFs" EntitySet="PRTFs" />
+          </AssociationSet>
+          <AssociationSet Name="Training_Person" Association="DBModel.Store.Training_Person">
+            <End Role="People" EntitySet="People" />
+            <End Role="Trainings" EntitySet="Trainings" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Advances">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+          <Property Name="LetterNo" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="AdvanceType" Type="nvarchar" MaxLength="255" />
+          <Property Name="LetterDate" Type="datetime" />
+          <Property Name="WEFDate" Type="datetime" />
+          <Property Name="Amount" Type="decimal" Scale="2" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="255" />
+          <Property Name="Advance_Person" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Awards">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+          <Property Name="AwardDate" Type="datetime" Nullable="false" />
+          <Property Name="AwardDescription" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Award_Person" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BankDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+          <Property Name="BankName" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="BankAddress" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="BankAccNo" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="IFSCCode" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="MICRNo" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="PANNO" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="BankDetails_Person" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Families">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+          <Property Name="FamilyMemberName" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Relation" Type="nvarchar" MaxLength="255" />
+          <Property Name="Gender" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="DOB" Type="datetime" Nullable="false" />
+          <Property Name="Family_Person" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Increments">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+          <Property Name="DateOfIncrement" Type="datetime" Nullable="false" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="255" />
+          <Property Name="RateOfPay" Type="decimal" Scale="2" />
+          <Property Name="Increment_Person" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Medicals">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+          <Property Name="MedicalCatagory" Type="nvarchar" MaxLength="255" />
+          <Property Name="MedicalRemarks" Type="nvarchar" MaxLength="255" />
+          <Property Name="MedicalReferance" Type="nvarchar" MaxLength="255" />
+          <Property Name="MedicalCertificateNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="MedicalCertificateDate" Type="datetime" />
+          <Property Name="MedicalReferanceDate" Type="datetime" />
+          <Property Name="Medical_Person" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NomineeRelativesSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+          <Property Name="Type" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Percent" Type="decimal" Nullable="false" Scale="9" />
+          <Property Name="Contingency" Type="nvarchar" MaxLength="255" />
+          <Property Name="NomineeRelatives_Nominee" Type="int" Nullable="false" />
+          <Property Name="NomineeRelatives_Family" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Nominees">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+          <Property Name="Witness1" Type="nvarchar" MaxLength="255" />
+          <Property Name="PFNo1" Type="int" />
+          <Property Name="Designation1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Witness2" Type="nvarchar" MaxLength="255" />
+          <Property Name="PFNo2" Type="int" />
+          <Property Name="Designation2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Nominee_Person" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Penalties">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+          <Property Name="LetterNo" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="LetterDate" Type="datetime" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+          <Property Name="PenaltyType" Type="nvarchar" MaxLength="255" />
+          <Property Name="FromDate" Type="datetime" />
+          <Property Name="ToDate" Type="datetime" />
+          <Property Name="Penalty_Person" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="People">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+          <Property Name="FullName" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="PFNo" Type="int" Nullable="false" />
+          <Property Name="EmplopyeeOldName" Type="nvarchar" MaxLength="255" />
+          <Property Name="FHName" Type="nvarchar" MaxLength="255" />
+          <Property Name="PresentAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="PermanantAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="DateOfRetirement" Type="datetime" />
+          <Property Name="Religion" Type="nvarchar" MaxLength="255" />
+          <Property Name="Community" Type="nvarchar" MaxLength="255" />
+          <Property Name="Caste" Type="nvarchar" MaxLength="255" />
+          <Property Name="Gender" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Recruitment" Type="nvarchar" MaxLength="255" />
+          <Property Name="Education" Type="nvarchar" MaxLength="255" />
+          <Property Name="AdditionalEducation" Type="nvarchar" MaxLength="255" />
+          <Property Name="IdentificationMark" Type="nvarchar" MaxLength="255" />
+          <Property Name="Image" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="PresentDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+          <Property Name="Department" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Scale" Type="nvarchar" MaxLength="255" />
+          <Property Name="Group" Type="nvarchar" MaxLength="255" />
+          <Property Name="BillUnit" Type="nvarchar" MaxLength="255" />
+          <Property Name="Designation" Type="nvarchar" MaxLength="255" />
+          <Property Name="RateOfPay" Type="decimal" Scale="2" />
+          <Property Name="Station" Type="nvarchar" MaxLength="255" />
+          <Property Name="PresentDetail_Person" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PRTFs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+          <Property Name="LetterNo" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Type" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Dated" Type="datetime" Nullable="false" />
+          <Property Name="OfficeOrderNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="Department" Type="nvarchar" MaxLength="255" />
+          <Property Name="Scale" Type="nvarchar" MaxLength="255" />
+          <Property Name="Group" Type="nvarchar" MaxLength="255" />
+          <Property Name="RateOfPay" Type="decimal" Scale="2" />
+          <Property Name="Station" Type="nvarchar" MaxLength="255" />
+          <Property Name="OtherStation" Type="nvarchar" MaxLength="255" />
+          <Property Name="Depot" Type="nvarchar" MaxLength="255" />
+          <Property Name="OtherDepot" Type="nvarchar" MaxLength="255" />
+          <Property Name="BillUnit" Type="nvarchar" MaxLength="255" />
+          <Property Name="CarriedOut" Type="nvarchar" MaxLength="255" />
+          <Property Name="AppointmentDate" Type="datetime" />
+          <Property Name="TemperoryStatusDate" Type="datetime" />
+          <Property Name="RegularisationDate" Type="datetime" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="255" />
+          <Property Name="PRTF_Person" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Trainings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+          <Property Name="LetterNo" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="LetterDate" Type="datetime" />
+          <Property Name="TrainingDesc" Type="nvarchar" MaxLength="255" />
+          <Property Name="FromDate" Type="datetime" />
+          <Property Name="ToDate" Type="datetime" />
+          <Property Name="TrainingStatus" Type="nvarchar" MaxLength="255" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="255" />
+          <Property Name="Training_Person" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="Advance_Person">
+          <End Role="People" Type="DBModel.Store.People" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Advances" Type="DBModel.Store.Advances" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Advances">
+              <PropertyRef Name="Advance_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Award_Person">
+          <End Role="People" Type="DBModel.Store.People" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Awards" Type="DBModel.Store.Awards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Awards">
+              <PropertyRef Name="Award_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BankDetail_Person">
+          <End Role="People" Type="DBModel.Store.People" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BankDetails" Type="DBModel.Store.BankDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BankDetails">
+              <PropertyRef Name="BankDetails_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Family_Person">
+          <End Role="People" Type="DBModel.Store.People" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Families" Type="DBModel.Store.Families" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Families">
+              <PropertyRef Name="Family_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Increment_Person">
+          <End Role="People" Type="DBModel.Store.People" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Increments" Type="DBModel.Store.Increments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Increments">
+              <PropertyRef Name="Increment_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Medical_Person">
+          <End Role="People" Type="DBModel.Store.People" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Medicals" Type="DBModel.Store.Medicals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Medicals">
+              <PropertyRef Name="Medical_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Nominee_Person">
+          <End Role="People" Type="DBModel.Store.People" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Nominees" Type="DBModel.Store.Nominees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Nominees">
+              <PropertyRef Name="Nominee_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NomineeRelatives_Family">
+          <End Role="Families" Type="DBModel.Store.Families" Multiplicity="1" />
+          <End Role="NomineeRelativesSet" Type="DBModel.Store.NomineeRelativesSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Families">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NomineeRelativesSet">
+              <PropertyRef Name="NomineeRelatives_Family" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NomineeRelatives_Nominee">
+          <End Role="Nominees" Type="DBModel.Store.Nominees" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="NomineeRelativesSet" Type="DBModel.Store.NomineeRelativesSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nominees">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NomineeRelativesSet">
+              <PropertyRef Name="NomineeRelatives_Nominee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Penalty_Person">
+          <End Role="People" Type="DBModel.Store.People" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Penalties" Type="DBModel.Store.Penalties" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Penalties">
+              <PropertyRef Name="Penalty_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PresentDetail_Person">
+          <End Role="People" Type="DBModel.Store.People" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PresentDetails" Type="DBModel.Store.PresentDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PresentDetails">
+              <PropertyRef Name="PresentDetail_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PRTF_Person">
+          <End Role="People" Type="DBModel.Store.People" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PRTFs" Type="DBModel.Store.PRTFs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PRTFs">
+              <PropertyRef Name="PRTF_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Training_Person">
+          <End Role="People" Type="DBModel.Store.People" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Trainings" Type="DBModel.Store.Trainings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Trainings">
+              <PropertyRef Name="Training_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DBEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Advances" EntityType="DBModel.Advance" />
+          <EntitySet Name="Awards" EntityType="DBModel.Award" />
+          <EntitySet Name="BankDetails" EntityType="DBModel.BankDetail" />
+          <EntitySet Name="Families" EntityType="DBModel.Family" />
+          <EntitySet Name="Increments" EntityType="DBModel.Increment" />
+          <EntitySet Name="Medicals" EntityType="DBModel.Medical" />
+          <EntitySet Name="NomineeRelativesSets" EntityType="DBModel.NomineeRelativesSet" />
+          <EntitySet Name="Nominees" EntityType="DBModel.Nominee" />
+          <EntitySet Name="Penalties" EntityType="DBModel.Penalty" />
+          <EntitySet Name="People" EntityType="DBModel.Person" />
+          <EntitySet Name="PresentDetails" EntityType="DBModel.PresentDetail" />
+          <EntitySet Name="PRTFs" EntityType="DBModel.PRTF" />
+          <EntitySet Name="Trainings" EntityType="DBModel.Training" />
+          <AssociationSet Name="Advance_Person" Association="DBModel.Advance_Person">
+            <End Role="People" EntitySet="People" />
+            <End Role="Advances" EntitySet="Advances" />
+          </AssociationSet>
+          <AssociationSet Name="Award_Person" Association="DBModel.Award_Person">
+            <End Role="People" EntitySet="People" />
+            <End Role="Awards" EntitySet="Awards" />
+          </AssociationSet>
+          <AssociationSet Name="BankDetail_Person" Association="DBModel.BankDetail_Person">
+            <End Role="People" EntitySet="People" />
+            <End Role="BankDetails" EntitySet="BankDetails" />
+          </AssociationSet>
+          <AssociationSet Name="Family_Person" Association="DBModel.Family_Person">
+            <End Role="People" EntitySet="People" />
+            <End Role="Families" EntitySet="Families" />
+          </AssociationSet>
+          <AssociationSet Name="NomineeRelatives_Family" Association="DBModel.NomineeRelatives_Family">
+            <End Role="Families" EntitySet="Families" />
+            <End Role="NomineeRelativesSet" EntitySet="NomineeRelativesSets" />
+          </AssociationSet>
+          <AssociationSet Name="Increment_Person" Association="DBModel.Increment_Person">
+            <End Role="People" EntitySet="People" />
+            <End Role="Increments" EntitySet="Increments" />
+          </AssociationSet>
+          <AssociationSet Name="Medical_Person" Association="DBModel.Medical_Person">
+            <End Role="People" EntitySet="People" />
+            <End Role="Medicals" EntitySet="Medicals" />
+          </AssociationSet>
+          <AssociationSet Name="NomineeRelatives_Nominee" Association="DBModel.NomineeRelatives_Nominee">
+            <End Role="Nominees" EntitySet="Nominees" />
+            <End Role="NomineeRelativesSet" EntitySet="NomineeRelativesSets" />
+          </AssociationSet>
+          <AssociationSet Name="Nominee_Person" Association="DBModel.Nominee_Person">
+            <End Role="People" EntitySet="People" />
+            <End Role="Nominees" EntitySet="Nominees" />
+          </AssociationSet>
+          <AssociationSet Name="Penalty_Person" Association="DBModel.Penalty_Person">
+            <End Role="People" EntitySet="People" />
+            <End Role="Penalties" EntitySet="Penalties" />
+          </AssociationSet>
+          <AssociationSet Name="PresentDetail_Person" Association="DBModel.PresentDetail_Person">
+            <End Role="People" EntitySet="People" />
+            <End Role="PresentDetails" EntitySet="PresentDetails" />
+          </AssociationSet>
+          <AssociationSet Name="PRTF_Person" Association="DBModel.PRTF_Person">
+            <End Role="People" EntitySet="People" />
+            <End Role="PRTFs" EntitySet="PRTFs" />
+          </AssociationSet>
+          <AssociationSet Name="Training_Person" Association="DBModel.Training_Person">
+            <End Role="People" EntitySet="People" />
+            <End Role="Trainings" EntitySet="Trainings" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Advance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <Property Name="LetterNo" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="AdvanceType" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="LetterDate" Type="DateTime" Precision="3" />
+          <Property Name="WEFDate" Type="DateTime" Precision="3" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Remark" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Advance_Person" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="DBModel.Advance_Person" FromRole="Advances" ToRole="People" />
+        </EntityType>
+        <EntityType Name="Award">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <Property Name="AwardDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AwardDescription" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Award_Person" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="DBModel.Award_Person" FromRole="Awards" ToRole="People" />
+        </EntityType>
+        <EntityType Name="BankDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <Property Name="BankName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="BankAddress" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="BankAccNo" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="IFSCCode" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="MICRNo" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PANNO" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="BankDetails_Person" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="DBModel.BankDetail_Person" FromRole="BankDetails" ToRole="People" />
+        </EntityType>
+        <EntityType Name="Family">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <Property Name="FamilyMemberName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Relation" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Family_Person" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="DBModel.Family_Person" FromRole="Families" ToRole="People" />
+          <NavigationProperty Name="NomineeRelativesSets" Relationship="DBModel.NomineeRelatives_Family" FromRole="Families" ToRole="NomineeRelativesSet" />
+        </EntityType>
+        <EntityType Name="Increment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <Property Name="DateOfIncrement" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Remarks" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="RateOfPay" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Increment_Person" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="DBModel.Increment_Person" FromRole="Increments" ToRole="People" />
+        </EntityType>
+        <EntityType Name="Medical">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <Property Name="MedicalCatagory" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="MedicalRemarks" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="MedicalReferance" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="MedicalCertificateNo" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="MedicalCertificateDate" Type="DateTime" Precision="3" />
+          <Property Name="MedicalReferanceDate" Type="DateTime" Precision="3" />
+          <Property Name="Medical_Person" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="DBModel.Medical_Person" FromRole="Medicals" ToRole="People" />
+        </EntityType>
+        <EntityType Name="NomineeRelativesSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Percent" Type="Decimal" Nullable="false" Precision="18" Scale="9" />
+          <Property Name="Contingency" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="NomineeRelatives_Nominee" Type="Int32" Nullable="false" />
+          <Property Name="NomineeRelatives_Family" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Family" Relationship="DBModel.NomineeRelatives_Family" FromRole="NomineeRelativesSet" ToRole="Families" />
+          <NavigationProperty Name="Nominee" Relationship="DBModel.NomineeRelatives_Nominee" FromRole="NomineeRelativesSet" ToRole="Nominees" />
+        </EntityType>
+        <EntityType Name="Nominee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <Property Name="Witness1" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PFNo1" Type="Int32" />
+          <Property Name="Designation1" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Witness2" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PFNo2" Type="Int32" />
+          <Property Name="Designation2" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Nominee_Person" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="NomineeRelativesSets" Relationship="DBModel.NomineeRelatives_Nominee" FromRole="Nominees" ToRole="NomineeRelativesSet" />
+          <NavigationProperty Name="Person" Relationship="DBModel.Nominee_Person" FromRole="Nominees" ToRole="People" />
+        </EntityType>
+        <EntityType Name="Penalty">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <Property Name="LetterNo" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="LetterDate" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PenaltyType" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="FromDate" Type="DateTime" Precision="3" />
+          <Property Name="ToDate" Type="DateTime" Precision="3" />
+          <Property Name="Penalty_Person" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="DBModel.Penalty_Person" FromRole="Penalties" ToRole="People" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PFNo" Type="Int32" Nullable="false" />
+          <Property Name="EmplopyeeOldName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="FHName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PresentAddress" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PermanantAddress" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+          <Property Name="DateOfRetirement" Type="DateTime" Precision="3" />
+          <Property Name="Religion" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Community" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Caste" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Recruitment" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Education" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="AdditionalEducation" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="IdentificationMark" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Advances" Relationship="DBModel.Advance_Person" FromRole="People" ToRole="Advances" />
+          <NavigationProperty Name="Awards" Relationship="DBModel.Award_Person" FromRole="People" ToRole="Awards" />
+          <NavigationProperty Name="BankDetails" Relationship="DBModel.BankDetail_Person" FromRole="People" ToRole="BankDetails" />
+          <NavigationProperty Name="Families" Relationship="DBModel.Family_Person" FromRole="People" ToRole="Families" />
+          <NavigationProperty Name="Increments" Relationship="DBModel.Increment_Person" FromRole="People" ToRole="Increments" />
+          <NavigationProperty Name="Medicals" Relationship="DBModel.Medical_Person" FromRole="People" ToRole="Medicals" />
+          <NavigationProperty Name="Nominees" Relationship="DBModel.Nominee_Person" FromRole="People" ToRole="Nominees" />
+          <NavigationProperty Name="Penalties" Relationship="DBModel.Penalty_Person" FromRole="People" ToRole="Penalties" />
+          <NavigationProperty Name="PresentDetails" Relationship="DBModel.PresentDetail_Person" FromRole="People" ToRole="PresentDetails" />
+          <NavigationProperty Name="PRTFs" Relationship="DBModel.PRTF_Person" FromRole="People" ToRole="PRTFs" />
+          <NavigationProperty Name="Trainings" Relationship="DBModel.Training_Person" FromRole="People" ToRole="Trainings" />
+        </EntityType>
+        <EntityType Name="PresentDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <Property Name="Department" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Scale" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Group" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="BillUnit" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Designation" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="RateOfPay" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Station" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PresentDetail_Person" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="DBModel.PresentDetail_Person" FromRole="PresentDetails" ToRole="People" />
+        </EntityType>
+        <EntityType Name="PRTF">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <Property Name="LetterNo" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Dated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OfficeOrderNo" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Department" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Scale" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Group" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="RateOfPay" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Station" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="OtherStation" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Depot" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="OtherDepot" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="BillUnit" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="CarriedOut" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="AppointmentDate" Type="DateTime" Precision="3" />
+          <Property Name="TemperoryStatusDate" Type="DateTime" Precision="3" />
+          <Property Name="RegularisationDate" Type="DateTime" Precision="3" />
+          <Property Name="Remarks" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PRTF_Person" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="DBModel.PRTF_Person" FromRole="PRTFs" ToRole="People" />
+        </EntityType>
+        <EntityType Name="Training">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <Property Name="LetterNo" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="LetterDate" Type="DateTime" Precision="3" />
+          <Property Name="TrainingDesc" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="FromDate" Type="DateTime" Precision="3" />
+          <Property Name="ToDate" Type="DateTime" Precision="3" />
+          <Property Name="TrainingStatus" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Remark" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Training_Person" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="DBModel.Training_Person" FromRole="Trainings" ToRole="People" />
+        </EntityType>
+        <Association Name="Advance_Person">
+          <End Role="People" Type="DBModel.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Advances" Type="DBModel.Advance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Advances">
+              <PropertyRef Name="Advance_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Award_Person">
+          <End Role="People" Type="DBModel.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Awards" Type="DBModel.Award" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Awards">
+              <PropertyRef Name="Award_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BankDetail_Person">
+          <End Role="People" Type="DBModel.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BankDetails" Type="DBModel.BankDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BankDetails">
+              <PropertyRef Name="BankDetails_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Family_Person">
+          <End Role="People" Type="DBModel.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Families" Type="DBModel.Family" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Families">
+              <PropertyRef Name="Family_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NomineeRelatives_Family">
+          <End Role="Families" Type="DBModel.Family" Multiplicity="1" />
+          <End Role="NomineeRelativesSet" Type="DBModel.NomineeRelativesSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Families">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NomineeRelativesSet">
+              <PropertyRef Name="NomineeRelatives_Family" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Increment_Person">
+          <End Role="People" Type="DBModel.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Increments" Type="DBModel.Increment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Increments">
+              <PropertyRef Name="Increment_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Medical_Person">
+          <End Role="People" Type="DBModel.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Medicals" Type="DBModel.Medical" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Medicals">
+              <PropertyRef Name="Medical_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NomineeRelatives_Nominee">
+          <End Role="Nominees" Type="DBModel.Nominee" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="NomineeRelativesSet" Type="DBModel.NomineeRelativesSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nominees">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NomineeRelativesSet">
+              <PropertyRef Name="NomineeRelatives_Nominee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Nominee_Person">
+          <End Role="People" Type="DBModel.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Nominees" Type="DBModel.Nominee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Nominees">
+              <PropertyRef Name="Nominee_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Penalty_Person">
+          <End Role="People" Type="DBModel.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Penalties" Type="DBModel.Penalty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Penalties">
+              <PropertyRef Name="Penalty_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PresentDetail_Person">
+          <End Role="People" Type="DBModel.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PresentDetails" Type="DBModel.PresentDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PresentDetails">
+              <PropertyRef Name="PresentDetail_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PRTF_Person">
+          <End Role="People" Type="DBModel.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PRTFs" Type="DBModel.PRTF" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PRTFs">
+              <PropertyRef Name="PRTF_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Training_Person">
+          <End Role="People" Type="DBModel.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Trainings" Type="DBModel.Training" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Trainings">
+              <PropertyRef Name="Training_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="DBEntities">
+          <EntitySetMapping Name="Advances">
+            <EntityTypeMapping TypeName="DBModel.Advance">
+              <MappingFragment StoreEntitySet="Advances">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="LetterNo" ColumnName="LetterNo" />
+                <ScalarProperty Name="AdvanceType" ColumnName="AdvanceType" />
+                <ScalarProperty Name="LetterDate" ColumnName="LetterDate" />
+                <ScalarProperty Name="WEFDate" ColumnName="WEFDate" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Advance_Person" ColumnName="Advance_Person" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Awards">
+            <EntityTypeMapping TypeName="DBModel.Award">
+              <MappingFragment StoreEntitySet="Awards">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="AwardDate" ColumnName="AwardDate" />
+                <ScalarProperty Name="AwardDescription" ColumnName="AwardDescription" />
+                <ScalarProperty Name="Award_Person" ColumnName="Award_Person" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BankDetails">
+            <EntityTypeMapping TypeName="DBModel.BankDetail">
+              <MappingFragment StoreEntitySet="BankDetails">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="BankAddress" ColumnName="BankAddress" />
+                <ScalarProperty Name="BankAccNo" ColumnName="BankAccNo" />
+                <ScalarProperty Name="IFSCCode" ColumnName="IFSCCode" />
+                <ScalarProperty Name="MICRNo" ColumnName="MICRNo" />
+                <ScalarProperty Name="PANNO" ColumnName="PANNO" />
+                <ScalarProperty Name="BankDetails_Person" ColumnName="BankDetails_Person" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Families">
+            <EntityTypeMapping TypeName="DBModel.Family">
+              <MappingFragment StoreEntitySet="Families">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="FamilyMemberName" ColumnName="FamilyMemberName" />
+                <ScalarProperty Name="Relation" ColumnName="Relation" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Family_Person" ColumnName="Family_Person" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Increments">
+            <EntityTypeMapping TypeName="DBModel.Increment">
+              <MappingFragment StoreEntitySet="Increments">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="DateOfIncrement" ColumnName="DateOfIncrement" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="RateOfPay" ColumnName="RateOfPay" />
+                <ScalarProperty Name="Increment_Person" ColumnName="Increment_Person" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Medicals">
+            <EntityTypeMapping TypeName="DBModel.Medical">
+              <MappingFragment StoreEntitySet="Medicals">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="MedicalCatagory" ColumnName="MedicalCatagory" />
+                <ScalarProperty Name="MedicalRemarks" ColumnName="MedicalRemarks" />
+                <ScalarProperty Name="MedicalReferance" ColumnName="MedicalReferance" />
+                <ScalarProperty Name="MedicalCertificateNo" ColumnName="MedicalCertificateNo" />
+                <ScalarProperty Name="MedicalCertificateDate" ColumnName="MedicalCertificateDate" />
+                <ScalarProperty Name="MedicalReferanceDate" ColumnName="MedicalReferanceDate" />
+                <ScalarProperty Name="Medical_Person" ColumnName="Medical_Person" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NomineeRelativesSets">
+            <EntityTypeMapping TypeName="DBModel.NomineeRelativesSet">
+              <MappingFragment StoreEntitySet="NomineeRelativesSet">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Percent" ColumnName="Percent" />
+                <ScalarProperty Name="Contingency" ColumnName="Contingency" />
+                <ScalarProperty Name="NomineeRelatives_Nominee" ColumnName="NomineeRelatives_Nominee" />
+                <ScalarProperty Name="NomineeRelatives_Family" ColumnName="NomineeRelatives_Family" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nominees">
+            <EntityTypeMapping TypeName="DBModel.Nominee">
+              <MappingFragment StoreEntitySet="Nominees">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Witness1" ColumnName="Witness1" />
+                <ScalarProperty Name="PFNo1" ColumnName="PFNo1" />
+                <ScalarProperty Name="Designation1" ColumnName="Designation1" />
+                <ScalarProperty Name="Witness2" ColumnName="Witness2" />
+                <ScalarProperty Name="PFNo2" ColumnName="PFNo2" />
+                <ScalarProperty Name="Designation2" ColumnName="Designation2" />
+                <ScalarProperty Name="Nominee_Person" ColumnName="Nominee_Person" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Penalties">
+            <EntityTypeMapping TypeName="DBModel.Penalty">
+              <MappingFragment StoreEntitySet="Penalties">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="LetterNo" ColumnName="LetterNo" />
+                <ScalarProperty Name="LetterDate" ColumnName="LetterDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="PenaltyType" ColumnName="PenaltyType" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="Penalty_Person" ColumnName="Penalty_Person" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="People">
+            <EntityTypeMapping TypeName="DBModel.Person">
+              <MappingFragment StoreEntitySet="People">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="PFNo" ColumnName="PFNo" />
+                <ScalarProperty Name="EmplopyeeOldName" ColumnName="EmplopyeeOldName" />
+                <ScalarProperty Name="FHName" ColumnName="FHName" />
+                <ScalarProperty Name="PresentAddress" ColumnName="PresentAddress" />
+                <ScalarProperty Name="PermanantAddress" ColumnName="PermanantAddress" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="DateOfRetirement" ColumnName="DateOfRetirement" />
+                <ScalarProperty Name="Religion" ColumnName="Religion" />
+                <ScalarProperty Name="Community" ColumnName="Community" />
+                <ScalarProperty Name="Caste" ColumnName="Caste" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Recruitment" ColumnName="Recruitment" />
+                <ScalarProperty Name="Education" ColumnName="Education" />
+                <ScalarProperty Name="AdditionalEducation" ColumnName="AdditionalEducation" />
+                <ScalarProperty Name="IdentificationMark" ColumnName="IdentificationMark" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PresentDetails">
+            <EntityTypeMapping TypeName="DBModel.PresentDetail">
+              <MappingFragment StoreEntitySet="PresentDetails">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Scale" ColumnName="Scale" />
+                <ScalarProperty Name="Group" ColumnName="Group" />
+                <ScalarProperty Name="BillUnit" ColumnName="BillUnit" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="RateOfPay" ColumnName="RateOfPay" />
+                <ScalarProperty Name="Station" ColumnName="Station" />
+                <ScalarProperty Name="PresentDetail_Person" ColumnName="PresentDetail_Person" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRTFs">
+            <EntityTypeMapping TypeName="DBModel.PRTF">
+              <MappingFragment StoreEntitySet="PRTFs">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="LetterNo" ColumnName="LetterNo" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Dated" ColumnName="Dated" />
+                <ScalarProperty Name="OfficeOrderNo" ColumnName="OfficeOrderNo" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Scale" ColumnName="Scale" />
+                <ScalarProperty Name="Group" ColumnName="Group" />
+                <ScalarProperty Name="RateOfPay" ColumnName="RateOfPay" />
+                <ScalarProperty Name="Station" ColumnName="Station" />
+                <ScalarProperty Name="OtherStation" ColumnName="OtherStation" />
+                <ScalarProperty Name="Depot" ColumnName="Depot" />
+                <ScalarProperty Name="OtherDepot" ColumnName="OtherDepot" />
+                <ScalarProperty Name="BillUnit" ColumnName="BillUnit" />
+                <ScalarProperty Name="CarriedOut" ColumnName="CarriedOut" />
+                <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+                <ScalarProperty Name="TemperoryStatusDate" ColumnName="TemperoryStatusDate" />
+                <ScalarProperty Name="RegularisationDate" ColumnName="RegularisationDate" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="PRTF_Person" ColumnName="PRTF_Person" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trainings">
+            <EntityTypeMapping TypeName="DBModel.Training">
+              <MappingFragment StoreEntitySet="Trainings">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="LetterNo" ColumnName="LetterNo" />
+                <ScalarProperty Name="LetterDate" ColumnName="LetterDate" />
+                <ScalarProperty Name="TrainingDesc" ColumnName="TrainingDesc" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="TrainingStatus" ColumnName="TrainingStatus" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Training_Person" ColumnName="Training_Person" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,37 @@
+﻿body {
+    margin:0 auto;
+    font-family:'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'DejaVu Sans Condensed', sans-serif;
+font-size:13px;
+}
+
+.itemsGroup{
+    width:95%;
+    height:auto;
+    margin:inherit;
+
+}
+
+.textLabel {
+
+font-style:italic;
+}
+
+.textValue {
+
+font-style:normal;
+
+}
+h2{
+    margin:inherit;
+    text-align:center;
+    background-color:#77e0b2
+    
+}
+div.leftColumn {
+width:49%;
+float:left;
+}
+div.rightColumn {
+width:49%;
+float:right;
+}
