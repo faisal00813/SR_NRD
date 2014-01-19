@@ -49,6 +49,51 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Label PermanantAddress_lb;
         
         /// <summary>
+        /// DateOfRetirement_lb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label DateOfRetirement_lb;
+        
+        /// <summary>
+        /// Community_lb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Community_lb;
+        
+        /// <summary>
+        /// Gender_lb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Gender_lb;
+        
+        /// <summary>
+        /// Education_lb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Education_lb;
+        
+        /// <summary>
+        /// IdentificationMark_lb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label IdentificationMark_lb;
+        
+        /// <summary>
         /// EmployeeOldName_lb control.
         /// </summary>
         /// <remarks>
@@ -56,15 +101,6 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label EmployeeOldName_lb;
-        
-        /// <summary>
-        /// PresentAddress_lb control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PresentAddress_lb;
         
         /// <summary>
         /// DateOfBrith_lb control.
@@ -85,13 +121,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Label Religion_lb;
         
         /// <summary>
-        /// Community_lb control.
+        /// PresentAddress_lb control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Community_lb;
+        protected global::System.Web.UI.WebControls.Label PresentAddress_lb;
         
         /// <summary>
         /// Caste_lb control.
@@ -103,15 +139,6 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Label Caste_lb;
         
         /// <summary>
-        /// Gender_lb control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Gender_lb;
-        
-        /// <summary>
         /// Recuritment_lb control.
         /// </summary>
         /// <remarks>
@@ -119,15 +146,6 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Recuritment_lb;
-        
-        /// <summary>
-        /// Education_lb control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Education_lb;
         
         /// <summary>
         /// AdditionalEducation_lb control.
@@ -139,13 +157,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Label AdditionalEducation_lb;
         
         /// <summary>
-        /// IdentificationMark_lb control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label IdentificationMark_lb;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
         /// MedicalCatagory_lb control.

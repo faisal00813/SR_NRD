@@ -4,18 +4,18 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title
+    <title></title>
             <link href="style.css" rel="stylesheet" />
 
 </head>
 <body>
     <form id="form1" runat="server">
-    <div draggable="auto" spellcheck="True" style="position: static  float: left " aria-flowto="right" aria-expanded="undefined">
+    <div draggable="auto" spellcheck="True" >
     
     <h2>
-        <strong>Personnel Details</strong><br /></h2>
+        <strong>Personal Details</strong><br /></h2>
         <br /><div class="leftColumn">
-            <div style="float:left  margin-top: 0px " class="textLabel"> Full Name:
+            <div class="textLabel">rsonnel  Full Name:
                 <asp:Label ID="PersonName" runat="server" Text="Label" CssClass="textValue">
 
                 </asp:Label></div>
@@ -25,77 +25,105 @@
 
           
     
-   <div > Father&#39 s Name:
-        <asp:Label ID="FHName_lb" runat="server" Text="Label"></asp:Label></div>
+   <div class="textLabel" > Father&#39 s Name:
+        <asp:Label ID="FHName_lb" runat="server" Text="Label" CssClass="textValue"></asp:Label></div>
+            <br/>
+            <br/>
+      <div class="textLabel">     Premanant Address:
+    
+        <asp:Label ID="PermanantAddress_lb" CssClass="textValue" runat="server" Text="Label"></asp:Label></div><br /><br />
+        
+          <div class="textLabel">  Date Of Retirement:
+    
+        <asp:Label ID="DateOfRetirement_lb" runat="server" Text="Label"></asp:Label><br /><br /></div>
 
-              </div> 
-         <div class="rightColumn">
- <div > Employee Old Name:<asp:Label ID="EmployeeOldName_lb" runat="server" Text="Label"></asp:Label></div>
+              
+         
+            <div class="textLabel"> Community:
+            <asp:Label ID="Community_lb" runat="server" Text="Label"></asp:Label></div>
+            <br />
+            <br />
+           <div class="textLabel"> Gender:
+            <asp:Label ID="Gender_lb" runat="server" Text="Label"></asp:Label></div>
+            <br />
+            <br />
+           <div class="textLabel"> Education:
+            <asp:Label ID="Education_lb" runat="server" Text="Label"></asp:Label></div>
+            <br />
+            <br />
+         <div class="textLabel"> Identification Mark:
+            <asp:Label ID="IdentificationMark_lb" runat="server" Text="Label"></asp:Label></div>
+
+              
+         
              <br />
-             <br />
-<div >Present Address:
+            <br />
+            Image:<br />
+            </div>
+
+
+
+
+<div class="rightColumn">
+  <div class="textLabel"> Employee Old Name:<asp:Label ID="EmployeeOldName_lb" CssClass="textValue" runat="server" Text="Label"></asp:Label></div>
+   <br />
+        <br />
+       
+<div class="textLabel"> Date Of Brith:
+    
+        <asp:Label ID="DateOfBrith_lb" runat="server" Text="Label"></asp:Label></div>
+    
+        <br />
+        <br />
+       <div class="textLabel"> Religion:
+    
+        <asp:Label ID="Religion_lb" runat="server" Text="Label"></asp:Label></div>
+    
+        <br />
+    <br />
+    <div class="textLabel"> Address:
     
         <asp:Label ID="PresentAddress_lb" runat="server" Text="Label"></asp:Label></div>
-            </div>
+    <br />
+    
+        <br />
+
+                 <div class="textLabel">  Caste:
+    
+        <asp:Label ID="Caste_lb" runat="server" Text="Label"></asp:Label></div>
+    
+        <br />
+    <br />
+         
+<div class="textLabel"> Recuritment:<asp:Label ID="Recuritment_lb" runat="server" Text="Label"></asp:Label></div>
+            <br />
+    <br />
+    <div class="textLabel">   Additional Education:
+            <asp:Label ID="AdditionalEducation_lb" runat="server" Text="Label"></asp:Label></div>
+    
+        <br />
+    <br />
+       <div class="textLabel"> Identification Mark:
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></div>
+        <br />
+         </div>    
+
+     
+        
     
         <br />
         <br />
-        Premanant Address:
-    
-        <asp:Label ID="PermanantAddress_lb" runat="server" Text="Label"></asp:Label>
-    
-                                                                                                                                                                                                                                                 Date Of Brith:
-    
-        <asp:Label ID="DateOfBrith_lb" runat="server" Text="Label"></asp:Label>
-    
+        <br />
+         
         <br />
         <br />
-        Date Of Retirement:
-    
-        <asp:Label ID="DateOfRetirement_lb" runat="server" Text="Label"></asp:Label>
-    
-                                                                                                                                                                                                                                                 Religion:
-    
-        <asp:Label ID="Religion_lb" runat="server" Text="Label"></asp:Label>
-    
-        <br />
-        <br />
-        Community: <asp:Label ID="Community_lb" runat="server" Text="Label"></asp:Label>
-    
-                                                                                                                                                                                                                                                 Caste:
-    
-        <asp:Label ID="Caste_lb" runat="server" Text="Label"></asp:Label>
-    
-        <br />
-        <br />
-        Gender:
-    
-        <asp:Label ID="Gender_lb" runat="server" Text="Label"></asp:Label>
-    
-                                                                                                                                                                                                                                                 Recuritment:<asp:Label ID="Recuritment_lb" runat="server" Text="Label"></asp:Label>
-    
-        <br />
-        <br />
-        Education:
-    
-        <asp:Label ID="Education_lb" runat="server" Text="Label"></asp:Label>
-    
-                                                                                                                                                                                                                                                 Additional Education:
-    
-        <asp:Label ID="AdditionalEducation_lb" runat="server" Text="Label"></asp:Label>
-    
-        <br />
-        <br />
-        Identification Mark:
-  Identification Mark:
-    
-        <asp:Label ID="IdentificationMark_lb" runat="server" Text="Label"></asp:Label>
-    
-                                                                                                                                                                                                                                             Image:
+        
         <br />
         <br />
         <br />
-                                                                                                                               <strong>Medical Details</strong><br />
+        <br />
+        <br />
+             <strong>Medical Details</strong><br />
         <br />
         Medical Catagory: <asp:Label ID="MedicalCatagory_lb" runat="server" Text="Label"></asp:Label>
                                                                                                                                                                                                              Medical Remark:
@@ -148,7 +176,7 @@
         <br />
        <div style="float:left"> Designation:
         <asp:Label ID="Designation_lb" runat="server" Text="Label"></asp:Label></div>
-                                                                                                                                                                                                                                                          <div style="float:right"> RatOfPay:<asp:Label ID="RateOfPay_lb" runat="server" Text="Label"></asp:Label></div>
+                                                                                                                                                                                                                                                          <div  > RatOfPay:<asp:Label ID="RateOfPay_lb" runat="server" Text="Label"></asp:Label></div>
   <br />
         <br />
         Station:
@@ -177,7 +205,7 @@
 
 
         <br />
-        <div style="float:right">From Date:
+        <div  >From Date:
         
         <asp:Label ID="FromDate_lb" runat="server" Text="Label"></asp:Label></div>
 
@@ -194,7 +222,7 @@
 
 
         <br />
-        <div style="float:right"> Status: 
+        <div  > Status: 
 
 
         <asp:Label ID="Status_lb" runat="server" Text="Label"></asp:Label></div>
@@ -215,9 +243,9 @@
       <br />
         <br />
         <br />
-        <center><strong>Increment Details</strong>
+        <strong>Increment Details</strong>
             <br />
-        </center>
+        
   <br />
         Date Of Increment: <asp:Label ID="DateOfIncrement_lb" runat="server" Text="Label"></asp:Label>
 
@@ -225,7 +253,7 @@
 
 
         <br />
-        <div style="float:right">Remark:
+        <div  >Remark:
         
         <asp:Label ID="IncRemark_lb" runat="server" Text="Label"></asp:Label></div>
 
@@ -245,24 +273,24 @@
         <br />
         <br />
         <br />
-        <center><strong>Penalty</strong></center>
+        <strong>Penalty</strong>
         <br />
 
         Letter No:<asp:Label ID="PenLetterNo_lb" runat="server" Text="Label"></asp:Label>
         <br />
-        <div style="float:right">Letter Date:
+        <div  >Letter Date:
         <asp:Label ID="PenLetterDate_lb" runat="server" Text="Label"></asp:Label></div>
         <br />
         Status:
         <asp:Label ID="PenStatus_lb" runat="server" Text="Label"></asp:Label>
         <br />
-        <div style="float:right">Penalty Type:
+        <div  >Penalty Type:
         <asp:Label ID="PenaltyType_lb" runat="server" Text="Label"></asp:Label></div>
         <br />
         From Date:
         <asp:Label ID="PenFromDate_lb" runat="server" Text="Label"></asp:Label>
         <br />
-       <div style="float:right"> To Date:
+       <div  > To Date:
         <asp:Label ID="PenToDate_lb" runat="server" Text="Label"></asp:Label></div>
 
         <br />
@@ -275,7 +303,7 @@
         <br />
         Letter No:<asp:Label ID="AdvLetterNo_lb" runat="server" Text="Label"></asp:Label>
         <br />
-        <div style="float:right">
+        <div  >
             Advance Type:
             <asp:Label ID="AdvanceType_lb" runat="server" Text="Label"></asp:Label>
         </div>
@@ -283,7 +311,7 @@
         Letter Date:
         <asp:Label ID="AdvLetterDate_lb" runat="server" Text="Label"></asp:Label>
         <br />
-        <div style="float:right">
+        <div  >
             WEF Date:
             <asp:Label ID="WefDate_lb" runat="server" Text="Label"></asp:Label>
         </div>
@@ -291,7 +319,7 @@
         Amount:
         <asp:Label ID="AdvAmount_lb" runat="server" Text="Label"></asp:Label>
         <br />
-        <div style="float:right">
+        <div  >
             Remark:
             <asp:Label ID="AdvRemark_lb" runat="server" Text="Label"></asp:Label>
         </div>
@@ -304,7 +332,7 @@
         <br />
         Award Date:<asp:Label ID="AwardDate_lb" runat="server" Text="Label"></asp:Label>
         <br />
-        <div style="float:right">
+        <div  >
             Award Description:
             <asp:Label ID="AwardDesc_lb" runat="server" Text="Label"></asp:Label>
         </div>
@@ -316,7 +344,7 @@
         <br />
         Family Member Name:<asp:Label ID="FMName_lb" runat="server" Text="Label"></asp:Label>
         <br />
-        <div style="float:right">
+        <div  >
             Relation:
             <asp:Label ID="Relation_lb" runat="server" Text="Label"></asp:Label>
         </div>
@@ -324,7 +352,7 @@
         Gender:
         <asp:Label ID="FamGender_lb" runat="server" Text="Label"></asp:Label>
         <br />
-        <div style="float:right">
+        <div  >
             Date Of Brith:
             <asp:Label ID="FamDOB_lb" runat="server" Text="Label"></asp:Label>
         </div>
@@ -337,7 +365,7 @@
         <br />
         Witness No 1:<asp:Label ID="Witness1_lb" runat="server" Text="Label"></asp:Label>
         <br />
-        <div style="float:right">
+        <div  >
             PF No 1:
             <asp:Label ID="PF1_lb" runat="server" Text="Label"></asp:Label>
         </div>
@@ -345,7 +373,7 @@
         Designation 1:
         <asp:Label ID="Designation1_lb" runat="server" Text="Label"></asp:Label>
         <br />
-        <div style="float:right">
+        <div  >
             Witness No 2:
             <asp:Label ID="Witness2_lb" runat="server" Text="Label"></asp:Label>
         </div>
@@ -353,7 +381,7 @@
         PF No 2:
         <asp:Label ID="PF2_lb" runat="server" Text="Label"></asp:Label>
         <br />
-        <div style="float:right">
+        <div  >
             Designation 2:
             <asp:Label ID="Designation2_lb" runat="server" Text="Label"></asp:Label>
         </div>
@@ -366,7 +394,7 @@
         <br />
         Type:<asp:Label ID="NomineeType_lb" runat="server" Text="Label"></asp:Label>
         <br />
-        <div style="float:right">
+        <div  >
             Percent:
             <asp:Label ID="Percent_lb" runat="server" Text="Label"></asp:Label>
         </div>
@@ -374,7 +402,7 @@
         Contingency:
         <asp:Label ID="Contingency_lb" runat="server" Text="Label"></asp:Label>
         <br />
-        <div style="float:right">
+        <div  >
             Nominee Relative Nominee:
             <asp:Label ID="NomineeRelativeNominee_lb" runat="server" Text="Label"></asp:Label>
         </div>
